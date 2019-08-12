@@ -26,11 +26,11 @@ class Oracle():
         message = pkcs(plaintext + self.secret)
         return AES_ECB_encrypt(message, self.key)
 
-secret = base64.b64decode("""
-Um9sbGluJyBpbiBteSA1LjAKV2l0aCBteSByYWctdG9wIGRvd24gc28gbXkg
-aGFpciBjYW4gYmxvdwpUaGUgZ2lybGllcyBvbiBzdGFuZGJ5IHdhdmluZyBq
-dXN0IHRvIHNheSBoaQpEaWQgeW91IHN0b3A/IE5vLCBJIGp1c3QgZHJvdmUg
-YnkK
+_secret = base64.b64decode("""
+d2VsY29tZSB0byB0aGUgc3VwZXIgc2VjcmV0IHN1cGVyIHNlY3VyZSBwYXJ0
+IG9mIHRoaXMgbWVzc2FnZSwgdGhhdCBpZGVudGlmaWVzIHlvdSBhcyBhZG1p
+biBvciBub3QhCm1hbiBJIGhvcGUgbm8gb25lIGV2ZXIgZ2V0cyBiYWNrIGhl
+cmUgYW5kIHN0ZWFscyBteSBjb29raWVzID46Yw==
 """)
 
-oracle = Oracle(secret)
+oracle = Oracle(_secret)
